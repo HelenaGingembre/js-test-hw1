@@ -217,21 +217,227 @@ function checkAge(age) {
 console.log(checkAge(20) );
 //----------------------------
 console.log("Задача 16");
+function checkStorage(available, ordered) {
+  let message;
+  // Change code below this line
+if (available < ordered){
+message = "Not enough goods in stock!"
+}
+else{
+message = "Order is processed, our manager will contact you."
+}
+  // Change code above this line
+  return message;
+}
+console.log(checkStorage( 20, 15) );
 
 //----------------------------
 console.log("Задача 17");
 
+let a_ = 5;
+let b_ = 10;
+let c_ = 15;
+let d_ = 20;
+
+// Change code below this line
+a_ += 2;
+b_ -= 4;
+c_ *= 3;
+d_ /= 10;
+
+console.log(`5+2 = ${a_}`);
+console.log(`10-4 = ${b_}`);
+console.log(`15*3 = ${c_}`);
+console.log(`20/10 = ${d_}`);
+
+
 //----------------------------
 console.log("Задача 18");
 
+function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
+  let message;
+  // Change code below this line
+  let totalPrice = pricePerDroid * orderedQuantity;
+ 
+  if(customerCredits < totalPrice){
+   
+    message = "Insufficient funds!";
+
+  }
+    else {
+    customerCredits = customerCredits - totalPrice;
+     message = `You ordered ${orderedQuantity} droids, you have ${customerCredits} credits left`;
+    }
+  // Change code above this line
+  return message;
+}
+
+console.log(makeTransaction(3000, 5, 23000));
 //----------------------------
 console.log("Задача 19");
+function checkPassword(password) {
+  const ADMIN_PASSWORD = 'jqueryismyjam';
+  let message;
+
+  if (password === null) { // Change this line
+    message =  'Canceled by user!';
+  } else if (password === ADMIN_PASSWORD ) { // Change this line
+    message = 'Welcome!';
+  } else {
+    message = 'Access denied, wrong password!';
+  }
+
+  return message;
+}
+console.log(checkPassword('Canceled'));
+
 
 //----------------------------
 console.log("Задача 20");
 
-//----------------------------
-console.log("Задача 21");
+function checkStorage20(available, ordered) {
+  let message;
+  // Change code below this line
+ if(ordered === 0){
+   message = "There are no products in the order!";
+ }
+ else if(ordered > available ){
+   message = "Your order is too large, there are not enough items in stock!";
+ }
+ else{
+   message = "The order is accepted, our manager will contact you";
+ }
+  // Change code above this line
+  return message;
+}
+
+console.log(checkStorage20(70, 0));
+console.log(checkStorage20(200, 20));
+console.log(checkStorage20(200, 250));
+
+
 
 //----------------------------
+console.log("Задача 21");
+function isNumberInRange(start, end, number) {
+  const isInRange = (start <= number && number <= end); // Change this line
+  return isInRange;
+} 
+
+
+console.log(isNumberInRange(10, 30, 17));
+//----------------------------
 console.log("Задача 22");
+/*Функция checkIfCanAccessContent(subType) проверяет,
+ может ли пользователь получить доступ к контенту. 
+ Проверка происходит по типу подписки. Получить доступ
+ могут только пользователи с подпиской pro или vip.*/
+function checkIfCanAccessContent(subType) {
+  const canAccessContent = (subType == "pro" || subType == "vip") ; // Change this line
+
+  return canAccessContent;
+}
+console.log(checkIfCanAccessContent("starter"));
+console.log(checkIfCanAccessContent("vip"));
+console.log(checkIfCanAccessContent("pro"));
+
+
+//----------------------------
+console.log("Задача 23");
+/*Функция isNumberNotInRange(start, end, number) проверяет,
+ не входит ли число в промежуток. То есть число должно быть 
+ меньше либо равно start и больше либо равно end.
+Результатом выражения проверки будет буль true или false. */
+function isNumberNotInRange(start, end, number) {
+  const isInRange = number >= start && number <= end;
+  const isNotInRange = !isInRange; // Change this line
+
+  return isNotInRange;
+}
+
+console.log(isNumberNotInRange(10, 30, 17));
+console.log(isNumberNotInRange(10, 30, 5));
+
+//----------------------------
+console.log("Задача 24");
+
+
+console.log(" ");
+console.log(" ");
+console.log(" ");
+//----------------------------
+console.log("Задача 25");
+
+console.log(" ");
+console.log(" ");
+console.log(" ");
+//----------------------------
+console.log("Задача 26");
+
+console.log(" ");
+console.log(" ");
+console.log(" ");
+//----------------------------
+console.log("Задача 27");
+
+console.log(" ");
+console.log(" ");
+console.log(" ");
+//----------------------------
+console.log("Задача 28");
+
+console.log(" ");
+console.log(" ");
+console.log(" ");
+//----------------------------
+console.log("Задача 29");
+
+
+console.log(" ");
+console.log(" ");
+console.log(" ");
+//----------------------------
+console.log("Задача 30");
+
+
+console.log(" ");
+console.log(" ");
+console.log(" ");
+//----------------------------
+console.log("Задача 31");
+
+
+console.log(" ");
+console.log(" ");
+console.log(" ");
+//----------------------------
+console.log("Задача 32");
+
+
+console.log(" ");
+console.log(" ");
+console.log(" ");
+//----------------------------
+console.log("Задача 33");
+
+console.log(" ");
+console.log(" ");
+console.log(" ");
+//----------------------------
+console.log("Задача 34");
+
+
+console.log(" ");
+console.log(" ");
+console.log(" ");
+//----------------------------
+console.log("Задача 35");
+
+console.log(" ");
+console.log(" ");
+console.log(" ");
+//----------------------------
+console.log("Задача 36");
+
+
+console.log(" ");
