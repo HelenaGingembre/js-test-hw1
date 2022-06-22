@@ -392,7 +392,7 @@ console.log(getDiscount(1300));
 
 //----------------------------
 console.log("Задача 25");
-function checkStorage(available, ordered) {
+function checkStorage25(available, ordered) {
   let message;
   // Change code below this line
   
@@ -402,76 +402,248 @@ function checkStorage(available, ordered) {
 }
 
 
-console.log(checkStorage(100, 50));
-console.log(checkStorage(100, 130));
+console.log(checkStorage25(100, 50));
+console.log(checkStorage25(100, 130));
 
 //----------------------------
 console.log("Задача 26");
 
-console.log(" ");
-console.log(" ");
-console.log(" ");
+function checkPassword26(password) {
+  const ADMIN_PASSWORD = "jqueryismyjam";
+  let message;
+  // Change code below this line
+  message = password === ADMIN_PASSWORD?"Access is allowed" : "Access denied, wrong password!"; 
+  // Change code above this line
+  return message;
+}
+
+
+console.log(checkPassword26("jqueryismyjam"));
+console.log(checkPassword26("angul4r1sl1f3"));
+
+
+
 //----------------------------
 console.log("Задача 27");
+function getSubscriptionPrice(type) {
+  let price;
+  // Change code below this line
 
-console.log(" ");
-console.log(" ");
-console.log(" ");
+ switch (type) { // Change this line
+    case "organization": // Change this line
+      price = 50; // Change this line
+      break;
+
+    case "professional": // Change this line
+      price = 20; // Change this line
+      break;
+
+    case "starter": // Change this line
+      price = 0; // Change this line
+      break;
+  }
+
+  // Change code above this line
+  return price;
+}
+console.log(getSubscriptionPrice('_stаrter_'));
+console.log(getSubscriptionPrice('professional'));
+console.log(getSubscriptionPrice('starter'));
+
+
+
 //----------------------------
 console.log("Задача 28");
+function checkPassword28(password) {
+  const ADMIN_PASSWORD = "jqueryismyjam";
+  let message;
+  // Change code below this line
 
-console.log(" ");
-console.log(" ");
-console.log(" ");
+  switch (password) {
+    case null:
+    message = "Canceled by user!";
+    break;
+
+    case ADMIN_PASSWORD:
+    message = "Welcome!";
+    break;
+ 
+    default:
+    message = "Access denied, wrong password!";
+    
+  }
+
+  // Change code above this line
+  return message;
+}
+
+console.log(checkPassword28("mangohackzor"));
+console.log(checkPassword28(null));
+console.log(checkPassword("jqueryismyjam"));
+
+
 //----------------------------
 console.log("Задача 29");
 
+function getShippingCost(country) {
+  let message;
+  // Change code below this line
+  let price;
+switch(country){
 
-console.log(" ");
-console.log(" ");
-console.log(" ");
+  case "China":
+  price = 100;
+  message = `Shipping to ${country} will cost ${price} credits`;
+  break;
+
+  case "Chile":
+  price = 250;
+  message = `Shipping to ${country} will cost ${price} credits`;
+  break;
+
+  case  "Australia":
+  price = 170;
+  message = `Shipping to ${country} will cost ${price} credits`;
+  break;
+
+  case  "Jamaica":
+  price = 120;
+  message = `Shipping to ${country} will cost ${price} credits`;
+  break;
+        
+        
+  default:
+  message = "Sorry, there is no delivery to your country";
+
+}
+    
+  // Change code above this line
+  return message;
+}
+console.log(getShippingCost('Australia'));
+console.log(getShippingCost('Germany'));
+
 //----------------------------
 console.log("Задача 30");
+function getNameLength(name) {
+  const message = `Name ${name} is ${name.length} characters long`; // Change this line
+
+  return message;
+}
+
+console.log(getNameLength("Billy"));
+console.log(getNameLength("Joe"));
 
 
-console.log(" ");
-console.log(" ");
-console.log(" ");
+
 //----------------------------
 console.log("Задача 31");
+const courseTopic = "JavaScript essentials";
+// Change code below this line
+
+const courseTopicLength = courseTopic.length;
+const firstElement = courseTopic[0];
+const lastElement = courseTopic[courseTopicLength -1];
 
 
-console.log(" ");
-console.log(" ");
-console.log(" ");
+console.log( `Значение переменной courseTopicLength это число ${courseTopicLength}`);
+console.log(`Значение переменной firstElement это строка ${firstElement}`);
+console.log(`Значение переменной lastElement ${lastElement}`);
+
+
 //----------------------------
 console.log("Задача 32");
+/*Функция getSubstring(string, length) принимает строку
+ и возвращает подстроку от начала и до length символов.  */
+function getSubstring(string, length) {
+  const substring =string.slice(0, length) ; // Change this line
+/*переменной substring выражение создания подстроки 
+длинной length символов (от начала) из строки string. */
+  return substring;
+}
 
+console.log(getSubstring("Hello world", 6));
+console.log(getSubstring("Hello world", 8));
 
-console.log(" ");
-console.log(" ");
-console.log(" ");
 //----------------------------
 console.log("Задача 33");
+/*Функция formatMessage(message, maxLength) 
+принимает строку (параметр message) и форматирует её,
+ если длина превышает значение в параметре maxLength.*/
+function formatMessage(message, maxLength) {
+  let result;
+  // Change code below this line
+if( message.length <= maxLength){
+  result = message;
+}
+else{
+  result = message.slice(0, maxLength) + '...';
+}
+  /// Change code above this line
+  return result;
+}
 
-console.log(" ");
-console.log(" ");
-console.log(" ");
+
+
+
+console.log(formatMessage("Vestibulum facilisis purus nec", 20));
+console.log(formatMessage("Curabitur ligula sapien", 23));
+console.log(formatMessage("Nunc sed turpis a felis in nunc fringilla", 41));
+
+
 //----------------------------
 console.log("Задача 34");
+function normalizeInput(input) {
+  const normalizedInput =input.toLowerCase() ; // Change this line
+
+  return normalizedInput;
+}
 
 
-console.log(" ");
-console.log(" ");
-console.log(" ");
+console.log(normalizeInput("This ISN'T SpaM"));
+console.log(normalizeInput("Big SALE"));
+
 //----------------------------
 console.log("Задача 35");
+/*Присвой переменной result выражение проверки вхождения 
+имени (параметр name), в полное имя (параметр fullname). 
+Пусть функция строго относится к регистру букв, 
+то есть «Петя» и «петя» для неё разные имена. */
+function checkForName(fullName, name) {
+ const result = fullName.includes(name) ; // Change this line
+  return result;
+}
 
-console.log(" ");
-console.log(" ");
-console.log(" ");
+console.log(checkForName("Egor Kolbasov", "egOr"));
+console.log(checkForName("Egor Kolbasov", "Egor"));
+
 //----------------------------
 console.log("Задача 36");
 
+  function checkForSpam(message) {
+  let result;
+  // Change code below this line
+  let param1 = "spam";
+  let param2 = "sale";
+  let normalizedMsg = message.toLowerCase();
 
-console.log(" ");
+message = message.toLowerCase(message);
+  
+    if (normalizedMsg.includes(param1) || normalizedMsg.includes(param2)) {
+
+      return true;
+    } 
+    else {
+      return false;
+     }
+
+  return result;
+}
+
+
+
+console.log(checkForSpam("Get best sale offers now!"));
+console.log(checkForSpam("Amazing SalE, only tonight!"));
+console.log(checkForSpam("Get rid of sPaM emails. Our book in on sale!"));
+console.log(checkForSpam("JavaScript weekly newsletter"));
+console.log(checkForSpam("[SPAM] How to earn fast money?"));
