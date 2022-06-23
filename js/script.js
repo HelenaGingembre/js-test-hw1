@@ -275,7 +275,7 @@ function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
   return message;
 }
 
-console.log(makeTransaction18(500, 10, 5000));
+console.log(makeTransaction(500, 10, 5000));
 //----------------------------
 console.log("Задача 19");
 function checkPassword(password) {
