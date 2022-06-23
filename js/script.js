@@ -121,10 +121,13 @@ console.log(add9(22, 16, 24));
 
 //----------------------------
 console.log("Задача 10");
+
 function makeMessage (name10, price10) {
   // Change code below this line
+    
    const message = `You picked ${name10}, price per item is ${price10} credits`;
-  // Change code above this line
+  
+   // Change code above this line
   return message;
 };
 console.log(makeMessage('Radar', 6150));
@@ -265,14 +268,14 @@ function makeTransaction(pricePerDroid, orderedQuantity, customerCredits) {
 
   }
     else {
-    customerCredits = customerCredits - totalPrice;
+     customerCredits -= totalPrice;
      message = `You ordered ${orderedQuantity} droids, you have ${customerCredits} credits left`;
     }
   // Change code above this line
   return message;
 }
 
-console.log(makeTransaction(3000, 5, 23000));
+console.log(makeTransaction18(500, 10, 5000));
 //----------------------------
 console.log("Задача 19");
 function checkPassword(password) {
