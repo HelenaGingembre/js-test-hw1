@@ -77,54 +77,67 @@ console.log(fruits);
 console.log("Задача 5");
 console.log("__________________");
 
-const fruits_mas = ["apple", "plum", "pear", "orange"];
+
 
 // Change code below this line
-const firstElement = fruits_mas[0];
-const secondElement = fruits_mas[1];
-const lastElement = fruits_mas[3];
+const firstElement = fruits[0];
+const secondElement = fruits[1];
+const lastElement = fruits[3];
 
 console.log(firstElement);
-console.log(fruits_mas[2]);
+console.log(fruits[2]);
 
 /**----------------------------------------- */
 console.log("Задача 6");
 console.log("__________________");
-const fruits_6 = ["apple", "plum", "pear", "orange"];
-console.log(fruits_6 );
+//const fruits = ["apple", "plum", "pear", "orange"];
+console.log(fruits );
 // Write your code under this line
-fruits_6[1]="peach";
-fruits_6[3]="banana";
-console.log(fruits_6 );
+fruits[1]="peach";
+fruits[3]="banana";
+console.log(fruits );
 
 
 /**----------------------------------------- */
 console.log("Задача 7");
 console.log("__________________");
 
-const fruits_7 = ["apple", "peach", "pear", "banana"];
+//const fruits = ["apple", "peach", "pear", "banana"];
 
 // Change code below this line
-const fruitsArrayLength = fruits_7.length;
+const fruitsArrayLength = fruits.length;
 
-console.log(fruits_7);
+console.log(fruits);
 console.log(fruitsArrayLength);
 
 /**----------------------------------------- */
 console.log("Задача 8");
 console.log("__________________");
 
+const lastElementIndex = fruits.length - 1;
+const lastElement_8 = fruits[lastElementIndex];
 
+console.log(lastElement_8);
 
-console.log();
-console.log();
 
 /**----------------------------------------- */
 console.log("Задача 9");
 console.log("__________________");
 
+function getExtremeElements(array) {
+  // Change code below this line
+    const firstElement = array[0]; 
+    const lastElement = array[array.length - 1];
 
-console.log();
+    const arrayExtreme = [firstElement, lastElement];
+    
+    return arrayExtreme;
+  // Change code above this line
+  
+}
+
+console.log(getExtremeElements(["Earth", "Mars", "Venus"]));
+console.log(getExtremeElements([1, 2, 3, 4, 5]));
 console.log();
 
 /**----------------------------------------- */
