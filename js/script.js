@@ -639,8 +639,6 @@ message = message.toLowerCase(message);
     else {
       return false;
      }
-
-  return result;
 }
 
 
