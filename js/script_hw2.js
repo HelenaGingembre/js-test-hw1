@@ -143,70 +143,132 @@ console.log();
 /**----------------------------------------- */
 console.log("Задача 10");
 console.log("__________________");
+function splitMessage(message, delimeter) {
+  let words;
+  // Change code below this line
+  words = message.split(delimeter);
+  // Change code above this line
+  return words;
+}
 
 
 
-console.log();
-console.log();
+console.log(splitMessage("Mango hurries to the train", " "));
+console.log(splitMessage("Mango", ""));
+console.log(splitMessage("best_for_week", "_"));
 
 /**----------------------------------------- */
 console.log("Задача 11");
 console.log("__________________");
+function calculateEngravingPrice(message, pricePerWord) {
+   // Change code below this line
+    const totalWords = message.split(" ");
+    console.log(totalWords);
+    const totalPriceEngraving = totalWords.length * pricePerWord;
+
+    return totalPriceEngraving;
+   // Change code above this line
+}
 
 
-
-console.log();
-console.log();
+console.log(calculateEngravingPrice("JavaScript is in my blood", 10));
+console.log(calculateEngravingPrice("JavaScript is in my blood", 20));
+console.log(calculateEngravingPrice("Web-development is creative work", 40));
+console.log(calculateEngravingPrice("Web-development is creative work", 20));
 
 /**----------------------------------------- */
 console.log("Задача 12");
 console.log("__________________");
 
+function makeStringFromArray(array, delimeter) {
+  let string;
+  // Change code below this line
 
+    string = array.join(delimeter);
 
-console.log();
-console.log();
+  // Change code above this line
+  return string;
+}
 
+console.log(makeStringFromArray(["Mango", "hurries", "to", "the", "train"], " "));
+console.log(makeStringFromArray(["M", "a", "n", "g", "o"], ""));
+console.log(makeStringFromArray(["top", "picks", "for", "you"], "_"));
 /**----------------------------------------- */
 console.log("Задача 13");
+console.log("Slug это всегда строка в нижнем регистре, слова которой разделены тире.");
 console.log("__________________");
+function slugify(title) {
+  // Change code below this line
+    title = title.toLowerCase();
+    const slugArray = title.split(" ");
+        
+    const slug = slugArray.join("-");
+    console.log(slug);
+   
+return slug;
+  // Change code above this line
+}
 
-
+console.log(slugify("Arrays for begginers"));
+console.log(slugify("English for developer"));
+console.log(slugify("How to become a JUNIOR developer in TWO WEEKS"));
 console.log();
-console.log();
-
 /**----------------------------------------- */
 console.log("Задача 14");
 console.log("__________________");
 
+const fruits14 = ['apple', 'plum', 'pear', 'orange', 'banana'];
 
+// Change code below this line
+const firstTwoEls = fruits14.slice(0, 2) ;
+const nonExtremeEls =fruits14.slice(1, (fruits14.lenght - 1)) ;
+const lastThreeEls = fruits14.slice(-3);
 
-console.log();
-console.log();
 
 /**----------------------------------------- */
 console.log("Задача 15");
 console.log("__________________");
 
+const oldClients = ['Mango', 'Ajax', 'Poly', 'Kiwi'];
+const newClients = ['Peach', 'Houston'];
 
+const allClients = oldClients.concat(newClients); // Change this line
 
-console.log();
-console.log();
+console.log(allClients);
 
 /**----------------------------------------- */
 console.log("Задача 16");
 console.log("__________________");
+function makeArray(firstArray, secondArray, maxLength) {
+    // Change code below this line
+    let newArray = firstArray.concat(secondArray);
+    console.log(newArray.length);
+    console.log(newArray);
+   
+   
+if ( newArray.length >= maxLength ){
+    newArray = newArray.slice(0, maxLength);
+} 
+
+return newArray;
+    // Change code above this line
+  }
 
 
-
-console.log();
-console.log();
-
+console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3));
+console.log(makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4));
+console.log(makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3));
+console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 2));
+console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4));
+console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0));
 /**----------------------------------------- */
 console.log("Задача 17");
 console.log("__________________");
 
 
+
+console.log();
+console.log();
 console.log();
 console.log();
 
