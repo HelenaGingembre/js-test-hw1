@@ -51,3 +51,17 @@ do {
     console.log('enterNumber', enterNumber);
     
 } while (EnterNumber !== null);
+
+/*
+let total = 0;
+let bool = true;
+while (bool) {
+  const number = prompt('введіть число');
+  if (number !== null) {
+    total += Number(number);
+    continue;
+  }
+  bool = false;
+}
+console.log(total);
+*/

@@ -264,23 +264,32 @@ console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0));
 /**----------------------------------------- */
 console.log("Задача 17");
 console.log("__________________");
+const start = 3;
+const end = 7;
 
+for (let i = start; i <= end; i += 1 ) { // Change this line
+  console.log(i);
+}
 
-
-console.log();
-console.log();
-console.log();
-console.log();
 
 /**----------------------------------------- */
 console.log("Задача 18");
 console.log("__________________");
+function calculateTotal(number) {
+ // Change code below this line
+ let total=0;
+    for (let i = 1; i <= Number(number); i += 1 ){
+    total  += Number(i);
+    }
+
+return total;
+  // Change code above this line
+}
 
 
-
-console.log();
-console.log();
-
+console.log(calculateTotal(1));
+console.log(calculateTotal(2));
+console.log(calculateTotal(5));
 /**----------------------------------------- */
 console.log("Задача 19");
 console.log("__________________");
