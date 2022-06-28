@@ -293,48 +293,103 @@ console.log(calculateTotal(5));
 /**----------------------------------------- */
 console.log("Задача 19");
 console.log("__________________");
+const fruits_19 = ['apple', 'plum', 'pear', 'orange'];
+
+for (let i = 0; i < fruits_19.length; i += 1) { // Change this line
+    const fruit = fruits_19[i]; // Change this line
+    console.log(fruit);
+    
+}
 
 
-
-console.log();
-console.log();
 
 /**----------------------------------------- */
 console.log("Задача 20");
 console.log("__________________");
 
+function calculateTotalPrice_20(order) {
+  let total = 0;
+  // Change code below this line
+    for (let i = 0; i < order.length; i += 1){
+        total += order[i];
+    }
+  // Change code above this line
+  return total;
+}
 
 
-console.log();
-console.log();
+
+console.log(calculateTotalPrice_20([12, 85, 37, 4]));
+console.log(calculateTotalPrice_20([412, 371, 94, 63, 176]));
 
 /**----------------------------------------- */
 console.log("Задача 21");
 console.log("__________________");
+/* функцию findLongestWord(string) которая принимает 
+произвольную строку состоящую только из слов разделённых пробелом 
+(параметр string) и возвращает самое длинное слово в этой строке.
+*/
+function findLongestWord(string) {
+  // Change code below this line
+    const strings = string.split(" ");
+    console.log(strings);
+    let longestWord = strings[0];
+    
+
+    for (const word of strings) {  // слова word из массива strings
+        if (word.length > longestWord.length) {
+            longestWord = word;
+            //console.log(word);
+            }
+        
+    }
+
+ return `Самое длинное словo в массиве: ${longestWord}`;
+  // Change code above this line
+}
 
 
-
-console.log();
-console.log();
+console.log(findLongestWord("do a roll"));
+console.log(findLongestWord("The quick brown fox jumped over the lazy dog"));
 
 /**----------------------------------------- */
 console.log("Задача 22");
 console.log("__________________");
+function createArrayOfNumbers(min, max) {
+  const numbers = [];
+  // Change code below this line
+    for (let i = min; i <= max; i += 1){
+        numbers.push(i);
+    }
+  // Change code above this line
+  return numbers;
+}
 
 
 
-console.log();
-console.log();
+console.log(createArrayOfNumbers(1, 3));
+console.log(createArrayOfNumbers(29, 34));
 
 /**----------------------------------------- */
 console.log("Задача 23");
 console.log("__________________");
+function filterArray(numbers, value) {
+   // Change code below this line
+    const newNumbers = [];
+    for (let i = 0; i <= numbers.length; i += 1){
+        if (numbers[i] > value) {
+            newNumbers.push(numbers[i]);
+        }
+    }
+return newNumbers;
+
+  // Change code above this line
+}
 
 
-
-console.log();
-console.log();
-
+console.log(filterArray([1, 2, 3, 4, 5], 3));
+console.log(filterArray([1, 2, 3, 4, 5], 5));
+console.log(filterArray([12, 24, 8, 41, 76], 38));
 /**----------------------------------------- */
 console.log("Задача 24");
 console.log("__________________");
