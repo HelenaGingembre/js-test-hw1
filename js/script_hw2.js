@@ -377,6 +377,7 @@ function filterArray(numbers, value) {
    // Change code below this line
     const newNumbers = [];
     for (let i = 0; i <= numbers.length; i += 1){
+
         if (numbers[i] > value) {
             newNumbers.push(numbers[i]);
         }
@@ -393,31 +394,207 @@ console.log(filterArray([12, 24, 8, 41, 76], 38));
 /**----------------------------------------- */
 console.log("Задача 24");
 console.log("__________________");
+function checkFruit(fruit) {
+  const fruits = ["apple", "plum", "pear", "orange"];
+
+  return fruits.includes(fruit); // Change this line
+}
 
 
-console.log();
-console.log();
+console.log(checkFruit("mandarin"));
+console.log(checkFruit("pear"));
 
 /**----------------------------------------- */
 console.log("Задача 25");
 console.log("__________________");
+/*функцию getCommonElements(array1, array2) которая получает
+ два массива произвольной длины в параметры array1 и array2, 
+ и возвращает новый массив, состоящий из тех элементов, которые
+  присутствуют в обоих исходных массивах. */
+function getCommonElements(array1, array2) {
+  // Change code below this line
+    const arrayGeneral = [];
 
+    for (let i = 0; i < array1.length; i += 1){
+        if (array2.includes(array1[i])) {
+            arrayGeneral.push(array1[i]);
+         }
+    }
+    return arrayGeneral;
+ // Change code above this line
+}
 
-
-console.log();
-console.log();
-
+console.log(getCommonElements([1, 2, 3], [2, 4]));
+console.log(getCommonElements([24, 12, 27, 3], [12, 8, 3, 36, 27]));
+console.log(getCommonElements([1, 2, 3], [10, 20, 30]));
 /**----------------------------------------- */
 console.log("Задача 26");
 console.log("__________________");
+/* Выполни рефакторинг кода функции calculateTotalPrice(order)
+   заменив цикл for на for...of. */
+function calculateTotalPrice(order) {
+  let total = 0;
+  // Change code below this line
 
+//   for (let i = 0; i < order.length; i += 1) {
+//     total += order[i];
+//   }
+    for (const orderPrice of order) {
+        total += orderPrice;
+    }
+  // Change code above this line
+  return total;
+}
 
-
-console.log();
-console.log();
+console.log(calculateTotalPrice([164, 48, 291]));
+console.log(calculateTotalPrice([]));
 
 /**----------------------------------------- */
 console.log("Задача 27");
 console.log("__________________");
+/**Выполни рефакторинг функции filterArray(numbers, value)
+ *  заменив цикл for на for...of. */
+function filterArray27(numbers, value) {
+  // Change code below this line
+  const filteredNumbers = [];
+
+ /* for (let i = 0; i < numbers.length; i += 1) {
+    const number = numbers[i];
+
+    if (number > value) {
+      filteredNumbers.push(number);
+    }
+  }*/
+    for (const number of numbers) {
+       if (number > value) {
+            filteredNumbers.push(number);
+        }
+    }
+
+  return filteredNumbers;
+  // Change code above this line
+}
+
+console.log(filterArray27([1, 2, 3, 4, 5], 3));
+console.log(filterArray27([1, 2, 3, 4, 5], 4));
+console.log();
+console.log();
+
+/**----------------------------------------- */
+console.log("Задача 28");
+console.log("__________________");
+
+// Change code below this line
+const a = 3 % 1;
+const b = 4 % 3;
+const c = 11 % 4;
+const d = 12 % 7 ;
+const e = 8 % 3;
 
 
+console.log(a);
+console.log(b);
+console.log(c);
+console.log(d);
+console.log(e);
+/**----------------------------------------- */
+console.log("Задача 29");
+console.log("__________________");
+/**
+ * 
+ *Напиши функцию getEvenNumbers(start, end) которая возвращает
+  массив всех чётных чисел от start до end. Чётным считается 
+  число которое делится на 2 без остатка (10 % 2 === 0).
+ */
+function getEvenNumbers(start, end) {
+   // Change code below this line
+    const evenNumbers = [];
+        // console.log(start);
+        // console.log(end);
+    const numbers = [];
+    
+    for (let i = start; i <= end; i += 1) {
+        numbers.push(i);
+       // console.log(numbers);
+    }
+    for (const number of numbers) {
+            if (number % 2 === 0) {
+                evenNumbers.push(number);
+            }
+        }
+    return evenNumbers;
+    // Change code above this line
+  }
+
+console.log(getEvenNumbers(3, 11));
+console.log(getEvenNumbers(6, 12));
+console.log();
+console.log();
+
+/**----------------------------------------- */
+console.log("Задача 30");
+console.log("__________________");
+/**
+ * Дополни код так, чтобы в переменную number записывалось
+ *  первое число от start до end, которое делится на 5 без остатка.
+ */
+const start_task30 = 6;
+const end_task30 = 27;
+let number;
+
+for (let i = start_task30; i < end_task30; i += 1) {
+  if (i % 5 === 0) {
+      number = i;
+      break;
+  }
+}
+
+console.log(`первое число от ${start_task30} до ${end_task30}, которое делится на 5 без остатка: ${number}`);
+console.log();
+console.log();
+console.log();
+
+/**----------------------------------------- */
+console.log("Задача 31");
+console.log("__________________");
+function findNumber(start, end, divisor) {
+  // Change code below this line
+  let number;
+
+  for (let i = start; i < end; i += 1) {
+    if (i % divisor === 0) {
+      return  i;
+      //number = i;
+     // break;
+    }
+  }
+
+  //return number;
+  // Change code above this line
+}
+
+const result = findNumber(2, 6, 5);
+console.log("Лог после выхода из функции");
+console.log(`Результат выполнения функции ${result}`);
+
+console.log("Результат выполнения функции " + findNumber(16, 35, 7));
+
+/**----------------------------------------- */
+console.log("Задача 32");
+console.log("__________________");
+function includes(array, value) {
+    // Change code below this line
+   
+            for (const arg of array) {
+                if (arg === value) {
+                    console.log(arg);
+                    return true;
+                }
+     
+            }
+            return false;
+            // Change code above this line
+        }
+
+console.log(includes(["apple", "plum", "pear", "orange"], "plum"));
+console.log(includes([1, 2, 3, 4, 5], 17));
