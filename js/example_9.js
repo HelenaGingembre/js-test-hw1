@@ -1,3 +1,4 @@
+"use strict";
 console.log("----------- Example 9 ---------------");
 /**** Цикл for ****/
 
