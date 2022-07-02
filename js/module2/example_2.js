@@ -8,8 +8,17 @@ console.log("----------- Example 2 ---------------");
 Якщо значення змінної рівно '0' то виводити речення '19 г' без хвилин.
 */
 
-const hours = 14;
-const minutes = 26;
+const hours = 19;
+//const minutes = 0;
+ const minutes = 26;
+let time;
+
+if (minutes == 0) {
+  time = `Час заданий у змінній - ${hours} ч.`;
+} else {
+        time = `Час заданий у змінній -  ${hours} ч. ${minutes} мин.`;
+}
+console.log(time);
 
 
 
