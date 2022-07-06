@@ -813,34 +813,36 @@ const atTheOldToad41 = {
     },
 
     updatePotionName41(oldName, newName) {
-
-       // const { potions } = this;
+        let result = `Potion ${oldName} is not in inventory!`;
+        
+    // const { potions } = this;
         for (let i = 0; i < this.potions.length; i += 1) {
-           // const [{ name }] = this.potions[i];
-           // console.log(name);
-            //console.log(this.potions[i]);
-              if (oldName === this.potions[i].name) {
-                console.log(this.potions[i]);
-                this.potions[i].name = newName;
+         let { name } = this.potions[i];
+           
+              if (oldName === name) {
+                 console.log(` iм'я знайдено ${name}`);
+                               
+                  this.potions[i].name = newName;
+                 
+                  result = `найдена "${oldName}" змінено на "${newName}" `;
                   break;
-            }
+                }
             
         }
-        return  console.log(`Potion ${oldName} is not in inventory!`);
-        
-      
+        return console.log(result); 
+       
     },
     // Change code above this line
 };
 
 console.log(atTheOldToad41.potions);
 // atTheOldToad41.removePotion41("Dragon breath");
-// console.log(atTheOldToad41.getPotions41());
+ //console.log(atTheOldToad41(...potions ));
 
- atTheOldToad41.updatePotionName41("Dragon breath", "Polymorth");
- console.log(atTheOldToad41.getPotions41());
 atTheOldToad41.updatePotionName41("Dragon breath", "Polymorth");
- console.log(atTheOldToad41.getPotions41());
+console.log(atTheOldToad41.getPotions41());
+// atTheOldToad41.updatePotionName41("Dragon breath", "Polymorth");
+//  console.log(atTheOldToad41.getPotions41());
 // atTheOldToad41.addPotion41({ name: "Stone skin", price: 520 });
 //     atTheOldToad41.addPotion41({ name: "Invisibility", price: 620 })
 // console.log(atTheOldToad41.getPotions41());
