@@ -814,15 +814,17 @@ const atTheOldToad41 = {
 
     updatePotionName41(oldName, newName) {
         let result = `Potion ${oldName} is not in inventory!`;
+        const { potions } = this;
         
-    // const { potions } = this;
-        for (let i = 0; i < this.potions.length; i += 1) {
-         let { name } = this.potions[i];
-           
+        for (let i = 0; i < potions.length; i += 1) {
+         //const { potion } = potions[i];
+            console.log(potions[i].name);
+            const name = potions[i].name;
               if (oldName === name) {
                  console.log(` iм'я знайдено ${name}`);
                                
-                  this.potions[i].name = newName;
+                  potions[i].name = newName;
+                  //name = newName;
                  
                   result = `найдена "${oldName}" змінено на "${newName}" `;
                   break;
