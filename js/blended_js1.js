@@ -64,25 +64,36 @@ console.log(total);
 // користувача.
 // 5) Вказуємо країну через prompt  і купляємо тур.
 // 6) Виводимо повідомлення, що тур оплачений і залишок на рахунку користувача.
-const countries = [
+
+const  buyingTour = {
+tours :[
+  { name: "Ukraine", price: 100 },
+  { name: "Poland", price: 200 },
+  { name: "Croatia", price: 300 },
+  { name: "Montenegro", price: 400 },
+  { name: "France", price: 500 },
+  { name: "USA", price: 600},
+] ,
+ countries: [
   "Ukraine",
   "Poland",
   "Croatia",
   "Montenegro",
   "France",
   "USA",
-];
-const countriesPrice = [100, 200, 300, 400, 500, 600];
-let userName =[];
-let userPass =[];
+],
+  countriesPrice: [100, 200, 300, 400, 500, 600],
+  userName:[],
+  userPass:[],
+/*
+
 let userCredits;
 let userCountry;
 let maxPrice;
-
+*/
 // 1 - Пишемо реєстрацію користувача за допомогою prompt. 
 
-//console.log(userName);
-//console.log(userPass);
+
 /*
 // поки користувач не відмінив реєстрацію
 
@@ -106,25 +117,27 @@ while (bool) {
   console.log('Ви не пройшли реєстрацію. Спробуйте ще раз');
  }
 */
-function registration() {
-  userName.push(prompt('Введіть логін для реєстарції'));
-  userPass.push(prompt('Введіть пароль для реєстарції'));
+  registration() {
+  //  let userName =[];
+  //  let userPass =[];
+  this.userName.push(prompt('Введіть логін для реєстарції'));
+  this.userPass.push(prompt('Введіть пароль для реєстарції'));
 
-  return `Ваш логін: ${userName} \nВаш пароль: ${userPass}`;
-}
-console.log(registration());
+  return `Ваш логін: ${this.userName} \nВаш пароль: ${this.userPass}`;
+},
+
 
 //2- Аналогічно пишемо логінізацію: запитуємо логін та пароль,
 // порівнюємо їх з даними, які були введені при авторизації. 
-function login() {
+ login() {
   const loginToFind = prompt('Введіть логін, щоб увійти ');
   let message = `Користувача ${loginToFind} не знайдено.`;
 
-  while (userName.includes(loginToFind)) {
+  while (this.userName.includes(loginToFind)) {
     // message = `Користувач ${loginToFind} знайден.`;
     const passToFind = prompt('Введіть свій пароль ');
 
-    if (userPass.includes(passToFind)) {
+    if (this.userPass.includes(passToFind)) {
       message = `вітаємо ${loginToFind}, ви успішно залогінились.`
       
       break;
@@ -136,19 +149,73 @@ function login() {
     }
   }
   // Якщо ні - знову запитуємо логін та пароль.
-    ///------- написати!!!------------
+    ///-------як написати???------------
    return message;
-}
+},
 
-console.log(login());
+// maxPrice : prompt('Введіть максимальну суму, що готові витратити на тур '),
 
-
-//3) Запитуємо максимальну суму, яку готовий витратити користувач 
-// на тур.
+ 
+//3) Запитуємо максимальну суму, яку готовий витратити користувач на тур.
 // 4) Виводимо список усіх країн в alert, які доступні по сумі для 
 // користувача.
+ toursForClients : [],
+  affordableTour() {
+
+  let maxPrice = prompt('Введіть максимальну суму, що готові витратити на тур ');
+
+    //let toursForClients = [];
+    let result ;
+      
+      for (const tour of this.tours) {
+
+            if (tour.price <= maxPrice) {
+              this.toursForClients.push(tour);
+              //console.log(tour);
+                 // console.log(toursForClients);
+            }
+      }
+    
+    if (this.toursForClients.length != 0) {
+      console.table(this.toursForClients);
+     return result = alert(`Доступні тури: ${this.toursForClients}`);
+    }
+    
+    return result = alert(`Доступних турів немає`);
+  },
 // 5) Вказуємо країну через prompt  і купляємо тур.
 // 6) Виводимо повідомлення, що тур оплачений і залишок на рахунку користувача.
+  buyTour() {
+    let userCredits = 500; //let userCredits = maxPrice;
+    let userCountry = prompt ('Оберіть країну для відпочинку');
+    let maxPrice;
+   
+    for (const tour of this.tours) {
+      if (userCountry === tour.name) {
+        userCredits -= tour.price; 
+        return console.log(`Тур ${tour.name} оплачений і залишок на рахунку ${userCredits}`);
+      }
 
-console.log();
-console.log();
+    }
+    return console.log(`Тур не вибраний, на рахунку ${userCredits}`);
+ },
+
+};
+
+console.log(buyingTour.registration());
+console.log(buyingTour.login());
+console.log(buyingTour.affordableTour());
+console.log(buyingTour.buyTour());
+
+/*
+let userCredits;
+let userCountry;
+const countries = [
+  "Ukraine",
+  "Poland",
+  "Croatia",
+  "Montenegro",
+  "France",
+  "USA",
+];
+*/
