@@ -159,7 +159,8 @@ while (bool) {
 //3) Запитуємо максимальну суму, яку готовий витратити користувач на тур.
 // 4) Виводимо список усіх країн в alert, які доступні по сумі для 
 // користувача.
- toursForClients : [],
+  toursForClients: [],
+ 
   affordableTour() {
 
   let maxPrice = prompt('Введіть максимальну суму, що готові витратити на тур ');
@@ -218,4 +219,59 @@ const countries = [
   "France",
   "USA",
 ];
+
+const countriesPrice =[100, 200, 300, 400, 500, 600];
+ let userName=[];
+ let userPass=[];
+
 */
+
+const countries = [
+  "Ukraine",
+  "Poland",
+  "Croatia",
+  "Montenegro",
+  "France",
+  "USA",
+];
+
+const countriesPrice = [100, 200, 300, 400, 500, 600];
+
+const tours = [];
+
+const newTours = {
+  ...tours,
+    
+}
+
+// const keys = Object.keys(tours);
+// keys[0] = 'name';
+// keys[1] = 'price';
+// const values = Object.values(tours);
+
+for (const tour of tours) {
+  
+
+      for (let i = 0; i < countries.length; i += 1){
+            
+      console.log(countries[i]);
+          tour['name'] = countries[i];
+           tours.push(tour['name']);
+               
+          //console.log(tour);
+      }
+
+      for (let i = 0; i < countriesPrice.length; i += 1) {
+          
+
+        tour.price = countriesPrice[i];
+         tours.push(tour.price);
+           // tours[i].price = countriesPrice[i];
+            // console.log(tour);
+         // tours.push(tours[i].price);
+          
+  }
+}
+console.log(tours);
+console.table(tours);
+
