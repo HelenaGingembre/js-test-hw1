@@ -1,3 +1,4 @@
+"use strict";
 //  Реалізуйте result
 const a = ['a', 'b', 'c'];
 const b = [1, [2, 3]]; 
@@ -28,15 +29,13 @@ for (const key of b) {
 function convert(...args) {
     let newArg = [];
     for (const arg of args) {
-        if (typeof arg !== 'number') {
-            newArg.push(Number(arg));
-        } else {
-            newArg.push(String(arg));
-        }
-    }
+       
+            typeof arg !== 'number'
+            ? newArg.push(Number(arg))
+            : newArg.push(String(arg));
+  }
     return newArg;
 }
-
 
 console.log(convert('1', 2, 3, '4')); // [1, '2', '3', 4]
 

@@ -1,3 +1,4 @@
+"use strict";
 /*---
 Выполни рефакторинг методов объекта atTheOldToad
  так, чтобы они работали не с массивом строк, а с массивом объектов.------------------------------------*/
@@ -47,11 +48,7 @@ const atTheOldToad = {
             }
         }
        return `Potion ${potionName} is not in inventory!`;
-        
-        
-   
-
-        
+    
         /* const potionIndex = this.potions.indexOf(potionName);
  
          if (potionIndex === -1) {
