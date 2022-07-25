@@ -268,4 +268,432 @@ console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
 
 
 
+
+console.log("Завдання 11");
+console.log("/*-------------------*/");
+/*-------------------------------------------------
+Напиши класс StringBuilder, который принимает один параметр initialValue -
+ произвольную строку, которая записывается на создаваемый объект в свойство value.
+
+Объяви следующие методы класса:
+
+getValue() - возвращает текущее значение свойства value.
+padEnd(str) - получает парметр str (строку) и добавляет её в 
+конец значения свойства value объекта который вызывает этот 
+метод.
+padStart(str) - получает парметр str (строку) и добавляет
+ её в начало значения свойства value объекта который вызывает 
+ этот метод.
+padBoth(str) - получает парметр str (строку) и добавляет её 
+в начало и в конец значения свойства value объекта который 
+вызывает этот метод.
+-------------------------------------------------*/
+
+class StringBuilder{
+    constructor(initialValue) {
+        this.value = initialValue;
+    }
+  getValue() {
+    return this.value;
+  }
+  padEnd(str) {
+
+    // console.log(this.value);
+    // console.log(this.value.push(str));
+    // return this.value.push(str);
+    this.value += str;
+    
+  }
+  padStart(str) {
+     this.value = str +this.value;
+  }
+  padBoth(str) {
+     //this.value = this.value+str +this.value;
+    this.padStart(str);
+    this.padEnd(str);
+  }
+  
+}
+
+const builder = new StringBuilder(".");
+console.log(builder.getValue()); // "."
+builder.padStart("^");
+console.log(builder.getValue()); // "^."
+ builder.padEnd("^");
+console.log(builder.getValue()); // "^.^"
+builder.padBoth("=");
+console.log(builder.getValue()); // "=^.^="
+
+
+console.log();
+
+
+console.log("Завдання 12");
+console.log("/*-------------------*/");
+/*--------------------
+Выполни рефакторинг класса Car так, чтобы свойство brand
+ было приватным и добавь два метода для публичного интерфейса, для чтения и изменения этого свойства.-----------------------------*/
+class Car12 {
+  // Change code below this line
+  #brand;
+
+
+  constructor({ brand, model, price }) {
+    this.#brand = brand;
+    this.model = model;
+    this.price = price;
+  }
+  getBrand(){
+    return this.#brand;
+  }
+  changeBrand(newBrand){
+    this.#brand = newBrand;
+
+  }
+
+  // Change code above this line
+}
+
+const carBrand= new Car12({ brand: "Audi", model: "Q3", price: 36000 });
+
+console.log(carBrand);
+//console.log(new Car12({ brand: "Audi", model: "Q3", price: 36000 }));
+console.log(carBrand.getBrand());
+carBrand.changeBrand("Honda");
+console.log(carBrand);
+
+
+console.log("Завдання 13");
+console.log("/*-------------------*/");
+/*-------------------------------------------------*/
+class Storage13 {
+  // Change code below this line
+ #items;
+
+  constructor(items) {
+    this.#items = items;
+  }
+
+  getItems() {
+    return this.#items;
+  }
+
+  addItem(newItem) {
+    this.#items.push(newItem);
+  }
+
+  removeItem(itemToRemove) {
+    this.#items = this.#items.filter(item => item !== itemToRemove);
+  }
+}
+
+// Change code above this line
+const storage13 = new Storage13(["Nanitoids", "Prolonger", "Antigravitator"]);
+console.log(storage13.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
+storage13.addItem("Droid");
+console.log(storage13.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
+storage13.removeItem("Prolonger");
+console.log(storage13.getItems()); // ["Нанитоиды", "Антигравитатор", "Droid"]
+
+
+
+console.log("Завдання 14");
+console.log("/*-------------------*/");
+/*-------------------------------------------------*/
+class StringBuilder14 {
+  // Change code below this line
+  #value;
+
+  constructor(initialValue) {
+    this.#value = initialValue;
+  }
+
+  getValue() {
+    return this.#value;
+  }
+
+  padEnd(str) {
+    this.#value += str;
+  }
+
+  padStart(str) {
+    this.#value = str + this.#value;
+  }
+
+  padBoth(str) {
+    this.padStart(str);
+    this.padEnd(str);
+  }
+}
+
+// Change code above this line
+const builder14 = new StringBuilder14(".");
+console.log(builder14.getValue()); // "."
+builder14.padStart("^");
+console.log(builder14.getValue()); // "^."
+builder14.padEnd("^");
+console.log(builder14.getValue()); // "^.^"
+builder14.padBoth("=");
+console.log(builder14.getValue()); // "=^.^="
+
+
+console.log();
+console.log("Завдання 15");
+console.log("/*-------------------*/");
+/*--------------------------------
+Выполни рефакторинг класса Car. Сделай свойства model 
+и price приватными, также как #brand. Стандартизируй 
+публичный интерфейс класса заменив уже объявленные 
+методы на геттеры и сеттеры brand, model и price для
+ взаимодействия с приватными свойствами.-----------------*/
+class Car15 {
+  // Change code below this line
+ #brand;
+  #model;
+  #price;
+
+  constructor({ brand, model, price }) {
+    this.#brand = brand;
+    this.#model = model;
+    this.#price = price;
+  }
+
+  get brand() {
+    return this.#brand;
+  }
+
+  set brand(newBrand) {
+    this.#brand = newBrand;
+  }
+
+  get model() {
+    return this.#model;
+  }
+
+  set model(newModel) {
+    this.#model = newModel;
+  }
+
+  get price() {
+    return this.#price;
+  }
+
+  set price(newPrice) {
+    this.#price = newPrice;
+  }
+  // Change code above this line
+}
+
+const carBrand15= new Car15({ brand: "Audi", model: "Q3", price: 36000 });
+
+console.log(carBrand15);
+carBrand15.brand="Honda";
+console.log(carBrand15.brand);
+console.log(carBrand15);
+console.log("Завдання 16");
+console.log("/*-------------------*/");
+/*-------------------------------------------------*/
+class Car16 {
+  // Change code below this line
+  static MAX_PRICE = 50000;
+  
+  #price;
+
+  constructor({ price }) {
+    this.#price = price;
+  }
+
+  get price() {
+    return this.#price;
+  }
+
+  set price(newPrice) {
+    if(newPrice > Car16.MAX_PRICE){
+      this.#price;
+      console.log('ціна вища за max');
+      return;
+    }
+    this.#price = newPrice;
+    
+    }
+  
+  // Change code above this line
+}
+
+const audi16 = new Car16({ price: 35000 });
+console.log(audi16.price); // 35000
+
+audi16.price = 49000;
+console.log(audi16.price); // 49000
+
+audi16.price = 51000;
+console.log(audi16.price); // 49000
+
+console.log();
+console.log("Завдання 17");
+console.log("/*-------------------*/");
+/*-------------------------------------------
+Добавь классу Car публичный статический метод 
+checkPrice(price), принимающий цену автомобиля. 
+Метод должен сравнить значения параметра price 
+и приватного статического свойства MAX_PRICE--
+---------------------------------------------*/
+class Car17 {
+  static #MAX_PRICE = 50000;
+  // Change code below this line
+  static checkPrice(price) {
+    if (price > Car17.#MAX_PRICE) {
+      return 'Error! Price exceeds the maximum';
+    }
+    return `Success! Price is within acceptable limits`;
+  }
+  // Change code above this line
+  constructor({ price }) {
+    this.price = price;
+  }
+}
+
+const audi17 = new Car17({ price: 36000 });
+const bmw = new Car17({ price: 64000 });
+
+console.log(Car17.checkPrice(audi17.price)); // "Success! Price is within acceptable limits"
+console.log(Car17.checkPrice(bmw.price)); // "Error! Price exceeds the maximum"
+
+console.log();
+console.log("Завдання 18");
+console.log("/*-------------------*/");
+/*-------------------------------------------------*/
+class User18{
+  constructor(email) {
+    this.email = email;
+  }
+
+  get email() {
+    return this.email;
+  }
+
+  set email(newEmail) {
+    this.email = newEmail;
+  }
+}
+// Change code below this line
+class Admin extends User18 {
+  static AccessLevel = {
+    BASIC: "basic",
+    SUPERUSER: "superuser"
+  }
+}
+
+console.log(Admin.AccessLevel.BASIC);
+console.log(Admin.AccessLevel.SUPERUSER);
+console.log();
+
+console.log("Завдання 19");
+console.log("/*-------------------*/");
+/*-------------------------------------------------*/
+class User19 {
+  email;
+
+  constructor(email) {
+    this.email = email;
+  }
+
+  get email() {
+    return this.email;
+  }
+
+  set email(newEmail) {
+    this.email = newEmail;
+  }
+}
+
+class Admin19 extends User19 {
+  // Change code below this line
+  constructor({email, accessLevel }) {
+    super(email);
+    this.accessLevel = accessLevel;
+    }
+  static AccessLevel = {
+    BASIC: "basic",
+    SUPERUSER: "superuser",
+  };
+
+  // Change code above this line
+}
+
+const mango19 = new Admin19({
+  email: "mango@mail.com",
+  accessLevel: Admin19.AccessLevel.SUPERUSER,
+});
+
+console.log(mango19.email); // "mango@mail.com"
+console.log(mango19.accessLevel); // "superuser"
+
+
+console.log();
+console.log();
+console.log();
+console.log("Завдання 20");
+console.log("/*-------------------*/");
+/*-------------------------------------------------*/
+class User20 {
+  email;
+
+  constructor(email) {
+    this.email = email;
+  }
+
+  get email() {
+    return this.email;
+  }
+
+  set email(newEmail) {
+    this.email = newEmail;
+  }
+}
+class Admin20 extends User20 {
+  // Change code below this line
+  static AccessLevel = {
+    BASIC: "basic",
+    SUPERUSER: "superuser",
+  };
+
+  constructor({ email, accessLevel }) {
+    super(email);
+    this.accessLevel = accessLevel;
+    this.blacklistedEmails = [];
+  }
+
+  
+  blacklist(email) {
+    this.blacklistedEmails.push(email);
+  }
+  isBlacklisted(email) {
+    //должен проверять наличие значения параметра email
+    // в массиве хранящемся в свойстве blacklistedEmails
+    //и возвращать true или false.
+
+    if (this.blacklistedEmails.includes(email)) {
+      return true;
+    }
+    return false;
+  }
+
+  // Change code above this line
+}
+
+const mango20 = new Admin20({
+  email: "mango@mail.com",
+  accessLevel: Admin20.AccessLevel.SUPERUSER,
+});
+
+console.log(mango20.email); // "mango@mail.com"
+console.log(mango20.accessLevel); // "superuser"
+
+mango20.blacklist("poly@mail.com");
+console.log(mango20.blacklistedEmails); // ["poly@mail.com"]
+console.log(mango20.isBlacklisted("mango@mail.com")); // false
+console.log(mango20.isBlacklisted("poly@mail.com")); // true
+
+
 console.log();

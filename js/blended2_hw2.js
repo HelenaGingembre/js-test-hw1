@@ -8,7 +8,8 @@
 підтвердження та основну інформацію: "що замовив, вартість та час доставки".
 const restaurants =[];*/
 //Домашка: "Delivery"
-   const restaurants= [
+
+const restaurants= [
     {
     order: [],
     brand: "KFC",
@@ -37,60 +38,11 @@ const restaurants =[];*/
     deliveryTime: 20,
   },
 ];
-const services = {
-  menu: {},
-  showMenu(brand) {
-    this.getMenu(brand);
-    console.log(`Pесторан ${brand} пропонує такі страви:`);
-    let obj = { ...this.menu };
 
-    let arrMenu = [];
-    for (const key in obj) {
-          arrMenu.push(key, obj[key]);
-    }
-    console.log(arrMenu);
-    return arrMenu;  1
-  },
-  getResto(brand) {
-    return restaurants.find(resto => resto.brand === brand);
-  },
-  getMenu(brand) {
-          
-        const resto = this.getResto(brand);
-        //console.table(resto);
-        let result = resto.menu;
-        //console.log(result);
-        this.menu = result;
-        return result;
-       
-    },
-    addOrder({ email, dishes }, brand) { 
-
-        // console.log('зайшли до методу addOrder({ email, dishes }, brand) ');
-          const resto = this.getResto(brand);
-          let orderUser = resto.order.push({ email, dishes });
-                
-          alert(`Готується ваше замовлення «${dishes}» `);
-          this.confirmOrder(dishes, resto);
-        
-          return orderUser;
-    },
-    confirmOrder(dish, resto) { 
-      
-    // console.log('зайшли до методу confirmOrder(dish) ');
-          const key = dish;
-          
-          const price = resto.menu[key];
-          let message = `Дякуємо. Ваше замовлення: ${dish} вартістю: ${price}грн,\n з ресторану " ${resto.brand}" \n доставлять через-${resto.deliveryTime} хв`
-          
-          console.log(message);
-          alert(message);
-          return message;
-      },
-};
 const  torpedaDelivery = {
-        order: [],
-        chosenRestaurant: "",
+      
+         getDelivery() { },
+    
         getAvailableRestaurants() {
           return restaurants.map(restaurant => restaurant.brand);
         },
