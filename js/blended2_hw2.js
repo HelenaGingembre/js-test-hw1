@@ -38,30 +38,83 @@ const restaurants= [
     deliveryTime: 20,
   },
 ];
-
-const  torpedaDelivery = {
+const services = {
+  menu: {},
+  showMenu(brand) {
+    this.getMenu(brand);
+    console.log(`Pесторан ${brand} пропонує такі страви:`);
+      //let obj = { ...this.menu };
+      const dishes = Object.keys(this.menu);
+       //const price = Object.values(this.menu);
+    // let arrMenu = [];
+    // for (const key in obj) {
+    //       arrMenu.push(key, obj[key]);
       
-         getDelivery() { },
+    // }
+      console.log(dishes + ' - '+ this.menu[dishes]);
+      console.log(this.menu[dishes]);
+      return dishes + ' - '+ this.menu[dishes];
+  },
+  getRestaurant(brand) {
+    return restaurants.find(restaurant=> restaurant.brand === brand);
+  },
+  getMenu(brand) {
+          
+        const currentRestaurant = this.getRestaurant(brand);
+        let result = currentRestaurant.menu;
+        //console.log(result);
+        this.menu = result;
+        return result;
+       
+    },
+    addOrder({ email, dishes }, brand) { 
+
+        // console.log('зайшли до методу addOrder({ email, dishes }, brand) ');
+          const currentRestaurant = this.getRestaurant(brand);
+          let orderUser = currentRestaurant.order.push({ email, dishes });
+                
+          alert(`Готується ваше замовлення «${dishes}» `);
+          this.confirmOrder(dishes, currentRestaurant);
+        
+          return orderUser;
+    },
+    confirmOrder(dish, currentRestaurant) { 
+      
+    // console.log('зайшли до методу confirmOrder(dish) ');
+          const key = dish;
+          
+          const price = currentRestaurant.menu[key];
+          let message = `Дякуємо. Ваше замовлення: ${dish} вартістю: ${price}грн,\n з ресторану " ${currentRestaurant.brand}" \n доставлять через-${currentRestaurant.deliveryTime} хв`
+          
+          console.log(message);
+          alert(message);
+          return message;
+      },
+};
+const  torpedaDelivery = {
+        order: [],
+        chosenRestaurant: "",
     
         getAvailableRestaurants() {
           return restaurants.map(restaurant => restaurant.brand);
         },
-       chooseRestaurant() {
+        chooseRestaurant() {
           
           let brand = '';
-          let arrResto = this.getAvailableRestaurants();
+          let arrRestaurants = this.getAvailableRestaurants();
           
             do {
-                brand = prompt(`оберіть ресторан із списку : ${arrResto}`);
+                brand = prompt(`оберіть ресторан із списку : ${arrRestaurants}`);
                 
-            } while (!arrResto.includes(brand));
+            } while (!arrRestaurants.includes(brand));
           
           this.chosenRestaurant = brand;
          
           //console.log( `Pесторан ${brand} знайдено! Оберіть меню`);
           let result = alert(`Pесторан ${brand} знайдено! Зробіть замовлення`);
          
-          this.chooseDishes();
+        this.chooseDishes();
+        
           return result;
           
         },
@@ -69,16 +122,17 @@ const  torpedaDelivery = {
          // console.log('зайшли в функцію вибору їжі chooseDishes()');
           let email = prompt('Щоб зробити замовлення, вкажіть свій email ');
           
-          const resto = this.chosenRestaurant;
+          const currentRestaurant = this.chosenRestaurant;
 
-          let dishes = prompt(`Оберіть із списку доступне меню: ${services.showMenu(resto)}`);
+          let dishes = prompt(`Оберіть із списку доступне меню: ${services.showMenu(currentRestaurant)}`);
           this.order.push({email: email, dish: dishes});
          
-          services.addOrder({email, dishes}, resto);
+          services.addOrder({email, dishes}, currentRestaurant);
           
           },
     };
 
-    
- torpedaDelivery.chooseRestaurant();
+ services.showMenu("KFC");
+       
+//  torpedaDelivery.chooseRestaurant();
 

@@ -98,10 +98,19 @@ console.log(foo3()); // foo3(); // 60
 
 console.log('Завдання 7 ______________________ '); 
 
+
+
+
+
+
+
+
+console.log('Lesson this ______________________ '); 
+
 function foo7(){
     console.log(this);
 }
-const arrowFoo =()=>{console.log(this);}
+const arrowFoo =()=>{console.log(this)}
 const obj = {
     name: "DDDD",
     foo7,
@@ -124,3 +133,22 @@ obj.info.getInfo(); //=> info
 arrowFoo();//=>window
 obj.arrowFoo();//=>window
 obj.changeArrowFooThis();
+
+const student = {
+    tag: 'Mando',
+    showTag() {
+        console.log('showTag -> this', this);
+        console.log('showTag -> this.tag', this);
+    },
+};
+
+const invokeAction = function (action) {
+    console.log(action); // виведе саму функцію а не результат
+
+    action(); // визвали callback функцію
+}
+
+invokeAction(student.showTag); // undefined - т.к це посилання на функцію
+invokeAction(student.showTag()); // showTag() - це визов функції
+// showTag -> this {tag: 'Mando', showTag: ƒ}
+ //showTag -> this.tag {tag: 'Mando', showTag: ƒ}                     
